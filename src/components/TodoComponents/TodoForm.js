@@ -32,7 +32,10 @@ class TodoForm extends Component {
           value={this.state.input}
           onChange={this.handleChange}
         />
-        <input type='submit' value='Add Todo' />
+        <button type='submit'>Add Todo</button>
+        <button type='button' onClick={this.props.removeItem}>
+          Clear Completed
+        </button>
       </form>
     );
   }
