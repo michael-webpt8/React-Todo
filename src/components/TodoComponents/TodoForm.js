@@ -8,6 +8,16 @@ class TodoForm extends Component {
     };
   }
 
+  handleSubmit = e => {
+    e.preventDefault();
+
+    this.props.addItem(e, this.state.input);
+
+    this.setState({
+      input: ''
+    });
+  };
+
   handleChange = e => {
     this.setState({
       input: e.target.value
@@ -16,12 +26,13 @@ class TodoForm extends Component {
 
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <input
           type='text'
           value={this.state.input}
           onChange={this.handleChange}
         />
+        <input type='submit' value='Add Todo' />
       </form>
     );
   }
