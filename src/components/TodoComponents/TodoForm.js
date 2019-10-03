@@ -12,7 +12,6 @@ class TodoForm extends Component {
     this.setState({
       input: e.target.value
     });
-    console.log(this.state.input);
   };
 
   render() {
