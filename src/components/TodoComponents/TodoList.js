@@ -3,18 +3,21 @@
 import React, { Component } from 'react';
 import Todo from './Todo';
 class TodoList extends Component {
-  constructor() {
-    super();
-  }
-  render() {
-    const { tasks } = this.props;
-    return (
-      <ul>
-        {tasks.map((task, i) => {
-          return <Todo key={i} task={task} />;
-        })}
-      </ul>
-    );
-  }
+	render() {
+		const { tasks, todoToggle } = this.props;
+		return (
+			<ul>
+				{tasks.map((task) => {
+					return (
+						<Todo
+							key={task.id}
+							task={task}
+							todoToggle={(e) => todoToggle(e, task.id)}
+						/>
+					);
+				})}
+			</ul>
+		);
+	}
 }
 export default TodoList;
