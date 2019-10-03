@@ -48,14 +48,14 @@ class App extends React.Component {
 			completed: false
 		};
 		this.setState({
-			tasks: [newTask, ...this.state.tasks]
+			tasks: [...this.state.tasks, newTask]
 		});
 	};
 
 	render() {
 		return (
 			<div>
-				<h2>Welcome to your Todo App!</h2>
+				<h2>Lister 2.0</h2>
 				<TodoList tasks={this.state.tasks} todoToggle={this.todoToggle} />
 				<TodoForm addItem={this.addItem} />
 			</div>
